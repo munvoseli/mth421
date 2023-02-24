@@ -1,0 +1,76 @@
+\documentclass{article}
+\nonstopmode
+\usepackage[paperwidth=20cm,paperheight=575cm]{geometry}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{mathtools} % abs
+
+\geometry{margin=1cm}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{\baselineskip}
+\newcommand{\hr}{\vspace*{\parskip}\hrule}
+\newcommand{\ZZ}{\mathbb{Z}}
+\DeclareRobustCommand{\eel}[1]{\begin{align*}{#1}\end{align*}}
+\DeclareRobustCommand{\eelc}[1]{\begin{gather*}{#1}\end{gather*}}
+\newmdenv[roundcorner=2pt,align=center%
+,linecolor=yellow!20%
+,backgroundcolor=yellow!20%
+,linewidth=4,outerlinewidth=2%
+,outerlinecolor=blue!70!black%
+]{stonk}
+
+
+\AddToHook{shipout/before}{%
+    \pdfpageheight=\pagetotal
+    \advance\pdfpageheight by 2cm
+}
+\let\oldsection=\section
+\def\section{\pagebreak\oldsection}
+\AtEndDocument{\pagebreak}
+
+\newcommand{\modn}{\text{ (mod $n$)}}
+\newcommand{\Zn}{\ZZ_n}
+\renewcommand{\land}{\text{ and }}
+\renewcommand{\lor}{\text{ or }}
+
+\begin{document}
+
+\section*{2.3.9}
+
+
+\eelc{
+a\text{ is a unit in $\ZZ_n$}\\
+\exists b\in\ZZ_n\quad ab\equiv 1\modn\\
+n\mid ab-1\\
+\Downarrow\\
+\exists k\in\ZZ\quad ab-1=nk\\
+ab-nk=1\\
+ab+n(-k)=1\\
+\gcd(a,n)=1
+}
+
+
+\eelc{
+\forall c\in\Zn\setminus\{0\}\quad ac\neq 0\\
+\Updownarrow\\
+\nexists c\in\Zn\quad ac\equiv 0\\
+\Uparrow\\
+(c\in\Zn\land ac\equiv 0)\Rightarrow(c\equiv 0)
+}
+
+\eelc{
+\gcd(a,n)=1\\
+\exists k\in\ZZ,r\in\Zn\quad nk+r=c\\
+\exists m\in\ZZ ac=mn\\
+a(nk+r)=mn\\
+ar=n(m-ak)\\
+n\mid ar\\
+\gcd(a,n)=1\\
+n\mid r\text{ by Euclid's lemma}\\
+r=0\\
+c=nk\\
+c\equiv 0\\
+}
+
+\end{document}
