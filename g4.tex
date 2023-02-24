@@ -1,0 +1,183 @@
+\documentclass[12pt]{article}
+
+%\AtEndDocument{\cleardoublepage}
+%\AtEndDocument{% based in \cleardoublepage
+%  \clearpage
+%  \ifodd\value{page}\else
+%    \thispagestyle{empty}%
+%    \hbox{}\newpage
+%  \fi
+%}
+
+\usepackage[margin=1.0in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{fancyvrb}
+\usepackage{graphics}
+
+\usepackage{enumitem}
+
+\theoremstyle{definition}
+\newtheorem*{prob}{Problem}
+\newtheorem*{soln}{Solution}
+
+\DeclareMathOperator{\lcm}{lcm}
+\newcommand{\hr}{\vspace*{\parskip}\hrule}
+
+\newcommand{\CC}{{\mathbb{C}}}
+\newcommand{\ZZ}{{\mathbb{Z}}}
+\newcommand{\RR}{{\mathbb{R}}}
+\newcommand{\NN}{{\mathbb{N}}}
+\newcommand{\QQ}{{\mathbb{Q}}}
+\newcommand{\PP}{{\mathbb{P}}}
+
+
+\renewcommand{\mod}{\operatorname{mod}}
+
+\begin{document}
+
+% T I T L E
+%
+\title{421 HW 4 Group}
+\author{\textbf{change this to your names}}
+
+\date{}
+
+\maketitle
+
+\textbf{You may use Subring Test Theorem 3.6 for your justifications in Section 3.1.}
+
+
+%\begin{prob}[3.1.27] Let $S$ be the set of rational numbers that can be written
+%with an odd denominator. Prove that $S$ is a subring of $\QQ$, but is not a field.
+%\end{prob}
+%
+%\begin{soln}
+%
+%\end{soln}
+
+
+%\begin{prob}[3.1.32] 
+%Let $R$ be a ring and let $Z(R) = \{ a \in R \mid ar = ra \text{ for every } r \in R \}$.
+%In other words, $Z(R)$ consists of all elements of $R$ that commute with every other
+%element of $R$. Prove that $Z(R)$ is a subring of $R$.
+%\end{prob}
+%
+%\begin{soln}
+%
+%\end{soln}
+
+
+\begin{prob}[3.2.13]
+Let $S$ and $T$ be subrings of a ring $R$. In (a) and (b), if  
+the answer is ``yes,'' prove it. If  the answer is ``no,'' give a counterexample.
+
+(a) Is $S \cap T$ a subring of $R$?
+
+(b) Is $S \cup T$ a subring of $R$?
+\end{prob}
+
+\begin{soln}
+
+(a)
+
+Let $a$ be an element of $S\cap T$, and let $b$ be an element of $S\cap T$.
+
+\renewcommand\land{\text{ and }}
+Since $a\in S\cap T$ and $b\in S\cap T$, $a\in S\land a\in T$, and $b\in S\land b\in T$.
+
+Since $a\in S\land b\in S$, $ab\in S\land a+b\in S$ since $S$ is a ring.
+Similarly, $ab\in T\land a+b\in T$.
+Since $ab\in S\land ab\in T$, $ab\in S\cap T$, so $S\cap T$ is closed under multiplication.
+Similarly, $a+b\in S\land a+b\in T$, so $a+b\in S\cap T$, so $S\cap T$ is closed under addition.
+
+Since $S\neq\emptyset$ (because $S$ is a ring), there exists $s\in S$.
+Since $s\in S$, $s$ has an additive inverse $-s$.
+$s+(-s)=0_R$ (because addition in $S$ is the same as addition in $R$),
+so, by closure of addition, $0_R\in S$.
+Similarly, $0_R\in T$.
+Therefore, $0_R\in S\cap T$, so $S\cap T$ is nonempty.
+
+By the Subring Test Theorem, $S\cap T$ is a subring of $R$.
+
+(b)
+
+$\{0, 2, 4\}$ and $\{0, 3\}$ are both subrings of $\ZZ_6$.
+However, $\{0, 2, 3, 4\}$ is not closed under addition
+($2+3=5$, $2+3\not\in\{0,2,3,4\}$),
+so not necessarily a subring.
+
+\end{soln}
+
+\hr
+
+
+%\begin{prob}[3.2.22] (a) If $ab$ is a zero divisor in a ring $R$, prove that
+%$a$ or $b$ is a zero divisor.
+%
+%(b) If $a$ or $b$ is a zero divisor in a commutative ring $R$ and $ab \neq 0_R$,
+%prove that $ab$ is a zero divisor.
+%\end{prob}
+%
+%\begin{soln}
+%
+%
+%\end{soln}
+
+
+\begin{prob}[3.2.25] Let $S$ be a subring of a ring $R$ with identity.
+
+(a) If $S$ has an identity, show by example that $1_S$ may not be the same as $1_R$.
+
+(b) If both $R$ and $S$ are integral domains, prove that $1_S=1_R$.
+\end{prob}
+
+\begin{soln} (a)
+
+$\ZZ_6$ has an identity $1$, but its subring consisting of elements
+$\{0, 2, 4\}$ has $4$ as a multiplicative identity.
+
+(b)
+
+% TODO
+
+\end{soln}
+
+
+\hr
+
+%\begin{prob}[3.2.26]
+%Let $S$ be a subring of  a ring $R$. Prove that $0_S = 0_R$. 
+%[Hint: For fixed $a,b \in R$, how many solutions $x \in R$ are there for $a + x = b$?
+%Now consider $a=b=0_S$.]
+%\end{prob}
+%
+%\begin{soln}
+%
+%\end{soln}
+
+
+\begin{prob}[3.2.31]
+A \textbf{Boolean ring} is a ring $R$ with identity in which 
+$x^2 = x$ for every $x\in R$. For examples, see Exercises 19 and 44 in Section 3.1. 
+If $R$ is a Boolean ring, prove that      
+
+(a)   $a + a = 0_R$ for every $a\in R$, which means that $a = -a$. 
+[Hint: Expand $(a + a)^2$.]     
+
+(b) $R$ is commutative. [Hint: Expand $(a + b)^2$.]
+\end{prob}
+
+\begin{soln}
+
+\end{soln}
+
+\begin{prob}[3.2.DK1]
+Let $R$ be a ring with identity. Prove that if $1_R=0_R$, then
+$R = \{ 0_R \}$. That is, $R$ is the zero ring.
+\end{prob}
+
+\begin{soln}
+
+\end{soln}
+
+\end{document}
