@@ -82,6 +82,23 @@ Assume that the Division Algorithm always holds in $R[x]$. Prove that $R$ is a f
 
 \begin{soln}
 
+Statement of the division algorithm:
+given $f\in F[x]$ and $g\in F[x]$, there exist some polynomials $p$ and $r$
+such that $f=gp+r$ and either $r=0$ or degree of $r$ is less than degree of $g$.
+
+Suppose that $a$ is an arbitrary nonzero element of $R$.
+
+By the Division Algorithm,
+there exists some $p$ and $r$ for which $1=pa+r$,
+where $r$ is either $0$ or has degree less than $a$.
+$a$ has degree $0$, so it must be that $r=0$.
+Thus, $1=pa$.
+$a$ has an inverse.
+
+Since $a$ was an arbitrary nonzero element of $R$,
+every nonzero element of $R$ has a multiplicative inverse.
+Therefore, $R$ is a field.
+
 \end{soln}
 
 
