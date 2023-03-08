@@ -1,0 +1,188 @@
+\documentclass[12pt]{article}
+
+%\AtEndDocument{\cleardoublepage}
+%\AtEndDocument{% based in \cleardoublepage
+%  \clearpage
+%  \ifodd\value{page}\else
+%    \thispagestyle{empty}%
+%    \hbox{}\newpage
+%  \fi
+%}
+
+\usepackage[margin=1.0in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{fancyvrb}
+\usepackage{graphics}
+
+\usepackage{enumitem}
+
+\theoremstyle{definition}
+\newtheorem*{prob}{Problem}
+\newtheorem*{soln}{Solution}
+
+\DeclareMathOperator{\lcm}{lcm}
+
+\newcommand{\CC}{{\mathbb{C}}}
+\newcommand{\ZZ}{{\mathbb{Z}}}
+\newcommand{\RR}{{\mathbb{R}}}
+\newcommand{\NN}{{\mathbb{N}}}
+\newcommand{\QQ}{{\mathbb{Q}}}
+\newcommand{\PP}{{\mathbb{P}}}
+
+
+\renewcommand{\mod}{\operatorname{mod}}
+
+\begin{document}
+
+% T I T L E
+%
+\title{421 HW 5 Group}
+\author{\textbf{change this to your names}}
+
+\date{}
+
+\maketitle
+
+\textbf{Note}: $R$ denotes a ring and $F$ denotes a field and $p$ denotes a positive
+prime number.
+
+%\begin{prob}[4.1.5]
+%Find polynomials $q(x)$ and $r(x)$ such that $f(x) = g(x)q(x) + r(x)$, 
+%and $r(x) = 0$ or $\deg r(x) < \deg g(x)$:
+%
+%(d) $f(x) = 4x^4 + 2x^3 + 6x^2 + 4x + 5$ and $g(x) = 3x^2 + 2$ in $\ZZ_7[x]$.
+%
+%(The typography for the Division Algorithm is complex, 
+%so just tell me the remainder at each step.
+%For example, if $f(x) = x^3 + x + 5$ and $g(x) = x+1$ in $\QQ[x]$, the first
+%remainder would be $-x^2+x+5$. The second remainder would be $2x+5$, and so on.
+%Of course give the final $q(x)$ and $r(x)$.)
+%\end{prob}
+%
+%\begin{soln}
+
+
+%\end{soln}
+
+%\begin{prob}[4.1.13]
+%Let $R$ be a commutative ring. Let $f(x) = a_0 + a_1x + a_2x^2 + \dots + a_nx^n \in R[x]$.
+% If  $a_n \neq 0_R$ and $f(x)$
+%is a zero divisor in $R[x]$, prove that $a_n$ is a zero divisor in $R$.
+%\end{prob}
+%
+%\begin{soln}
+%
+%\end{soln}
+
+
+\begin{prob}[4.1.17]
+Let $R$ be an integral domain. 
+Assume that the Division Algorithm always holds in $R[x]$. Prove that $R$ is a field.
+\end{prob}
+
+\begin{soln}
+
+\end{soln}
+
+
+%\begin{prob}[4.2.5 \& 6]
+%(Read the fairly long intro to Exercise 5 in the book.)
+%\#5 Use the Euclidean Algorithm to find the gcd of  the given polynomials.\\
+%\#6 Express each of the gcd's in Exercise 5 as a linear combination of the two polynomials.
+%
+%(c) $x^4 + 3x^3 + 2x + 4$ and $x^2 - 1$ in $\ZZ_5[x]$.
+%\end{prob}
+%
+%\begin{soln}
+%
+%\end{soln}
+
+\begin{prob}[4.2.14]
+Let $f(x), g(x), h(x)\in F[x]$, with $f(x)$ and $g(x)$ relatively prime. 
+If  $f(x) \mid h(x)$ and $g(x) \mid h(x)$, prove that $f(x)g(x) \mid h(x)$.
+\end{prob}
+
+\begin{soln}
+
+\end{soln}
+
+
+\begin{prob}[4.3.12]
+Express $x^4 - 4$ as a product of irreducibles in $\QQ[x]$, in $\RR[x]$, and in $\CC[x]$.
+\end{prob}
+
+\begin{soln}
+\quad
+
+\begin{tabular}{l l}
+$\QQ[x]$ & $(x^2+2)(x^2-2)$\\
+$\RR[x]$ & $(x^2+2)(x-\sqrt2)(x+\sqrt2)$\\
+$\CC[x]$ & $(x-i\sqrt2)(x+i\sqrt2)(x-\sqrt2)(x+\sqrt2)$\\
+\end{tabular}
+
+\end{soln}
+
+
+%\begin{prob}[4.3.15]
+%(a) By counting products of  the form $(x + a)(x + b)$, 
+%show that there are exactly $(p^2 + p)/2$ monic polynomials of 
+%degree 2 that are \emph{not} irreducible in $\ZZ_p[x]$.  
+%
+%(b) Show that there are exactly $(p^2 - p)/2$ monic irreducible 
+%polynomials of degree 2 in $\ZZ_p[x]$.
+%\end{prob}
+%
+%\begin{soln}
+%
+%\end{soln}
+
+%\begin{prob}[4.4.15]
+%Prove that $x^2 + 1$ is reducible in $\ZZ_p[x]$ if and only if 
+%there exist integers $a$ and $b$ such that $p = a + b$ and $ab \equiv 1 \pmod{p}$.
+%\end{prob}
+%
+%\begin{soln}
+%
+%\end{soln}
+
+\begin{prob}[4.4.16]
+Let $f(x), g(x) \in F[x]$ have degree $\leq n$ and let 
+$c_0, c_1, \dots, c_n$ be distinct elements of  $F$. If  $f(c_i) = g(c_i)$ for 
+$i = 0, 1, \dots, n$, prove that $f(x) = g(x)$ in $F[x]$.
+\end{prob}
+
+\begin{soln}
+
+For $i\in0,1,...,n$, it is said that $f(c_i)=g(c_i)$.
+With subtraction, $f(c_i)-g(c_i)=0$.
+Since the degree of $f$ and degree of $g$ are both $\leq n$,
+it must be that $f-g=0$ or the degree of $f-g$ is $\leq n$.
+
+If $f-g$ is nonzero,
+since the degree of $f-g$ is $\leq n$,
+then $f-g$ must have at most $n$ roots.
+This is not the case, as it is said to have $n+1$ roots.
+
+$f-g$ must therefore be the zero polynomial.
+
+$f(x)-g(x)=0$, so $f(x)=g(x)$.
+
+\end{soln}
+
+\begin{prob}[4.4.19]
+We say that $a \in F$ is a multiple root of  $f(x) \in F[x]$ if  
+$(x - a)^k$ is a factor of  $f(x)$ for some $k \geq 2$. \\
+(a)   Prove that $a \in \RR$ is a multiple root of  $f(x)\in \RR[x]$ 
+if and only if  $a$ is a root of both $f(x)$ and $f'(x)$, where $f'(x)$ 
+is the derivative of  $f(x)$.\\
+(b)   If  $f(x) \in  \RR[x]$ and if $f(x)$ is relatively prime to $f'(x)$,
+ prove that $f(x)$ has no multiple root in $\RR$.
+\end{prob}
+
+\begin{soln}
+
+\end{soln}
+
+
+
+\end{document}
