@@ -198,6 +198,50 @@ is the derivative of  $f(x)$.\\
 
 \begin{soln}
 
+\textbf{(a)}
+
+Suppose $x-a$ is a multiple root of polynomial $f(x)\in\RR[x]$.
+This means that $(x-a)^k$ is a factor of $f$, for some $k\geq2$.
+Let $f$ be rewritten as $g(x-a)^k$,
+where $x-a$ does not divide $g$.
+
+By the product rule of differentiation,
+\begin{align*}
+f&=g(x-a)^k\\
+f'&=g'(x-a)^k + gk(x-a)^{k-1}\\
+f'&=(x-a)^{k-1}(g'(x-a)^k+gk)\\
+\end{align*}
+
+If $k\geq 2$, then $k-1\geq 1$, so $x-a$ is a factor of $f'$.
+
+This proves the forward direction.
+
+For the backward direction,
+
+Suppose that $f'=(x-a)g$ and $f=(x-a)h$ for some polynomials $g$ and $h$.
+
+Through differentiation, $f'=(x-a)h'+h$.
+
+\begin{align*}
+f'&=(x-a)g\\
+f'&=(x-a)h'+h\\
+(x-a)g&=(x-a)h'+h\\
+(x-a)(g-h')&=h
+\end{align*}
+
+
+Substituting into an earlier equation,
+$f=(x-a)(x-a)(g-h')$.
+
+$(x-a)^k$ is a factor of $f$ for some $k\geq 2$.
+Therefore, $x-a$ is a multiple root.
+
+The theorem is proven.
+
+\textbf{(b)}
+
+
+
 \end{soln}
 
 
