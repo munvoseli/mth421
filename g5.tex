@@ -240,7 +240,25 @@ The theorem is proven.
 
 \textbf{(b)}
 
+The forward statement above is the following, under the conditions
+that $k\geq 2$ and $f(x)\in\RR[x]$:
 
+\renewcommand{\land}{\text{ and }}
+\renewcommand{\lor}{\text{ or }}
+
+\begin{gather*}
+(x-a)^k\mid f \Longrightarrow (x-a)\mid f\land (x-a)\mid f'
+\end{gather*}
+Its contrapositive is
+\begin{gather*}
+(x-a)\nmid f\lor (x-a)\nmid f' \Longrightarrow (x-a)^k\nmid f
+\end{gather*}
+
+Suppose that, for every $a\in \RR$, $x-a\nmid f$ and $x-a\nmid f'$.
+
+This means that, for any $k\geq 2$, $(x-a)^k\nmid f$.
+
+The theorem is proven.
 
 \end{soln}
 
