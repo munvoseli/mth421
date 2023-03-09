@@ -21,6 +21,7 @@
 \newtheorem*{soln}{Solution}
 
 \DeclareMathOperator{\lcm}{lcm}
+\newcommand{\hr}{\vspace*{\parskip}\hrule}
 
 \newcommand{\CC}{{\mathbb{C}}}
 \newcommand{\ZZ}{{\mathbb{Z}}}
@@ -29,6 +30,13 @@
 \newcommand{\QQ}{{\mathbb{Q}}}
 \newcommand{\PP}{{\mathbb{P}}}
 
+\usepackage[framemethod=TikZ]{mdframed}
+\newmdenv[roundcorner=2pt,align=center%
+,linecolor=yellow!20%
+,backgroundcolor=yellow!20%
+,linewidth=4,outerlinewidth=2%
+,outerlinecolor=blue!70!black%
+]{stonk}
 
 \renewcommand{\mod}{\operatorname{mod}}
 
@@ -83,13 +91,14 @@ Assume that the Division Algorithm always holds in $R[x]$. Prove that $R$ is a f
 \begin{soln}
 
 Statement of the division algorithm:
-given $f\in F[x]$ and $g\in F[x]$, there exist some polynomials $p$ and $r$
+given $f\in F[x]$ and $g\in F[x]$,
+there exist some polynomials $p\in F[x]$ and $r\in F[x]$
 such that $f=gp+r$ and either $r=0$ or degree of $r$ is less than degree of $g$.
 
 Suppose that $a$ is an arbitrary nonzero element of $R$.
 
 By the Division Algorithm,
-there exists some $p$ and $r$ for which $1=pa+r$,
+there exists some $p\in R[x]$ and $r\in R[x]$ for which $1=pa+r$,
 where $r$ is either $0$ or has degree less than $a$.
 $a$ has degree $0$, so it must be that $r=0$.
 Thus, $1=pa$.
@@ -114,6 +123,8 @@ Therefore, $R$ is a field.
 %
 %\end{soln}
 
+\hr
+
 \begin{prob}[4.2.14]
 Let $f(x), g(x), h(x)\in F[x]$, with $f(x)$ and $g(x)$ relatively prime. 
 If  $f(x) \mid h(x)$ and $g(x) \mid h(x)$, prove that $f(x)g(x) \mid h(x)$.
@@ -121,8 +132,53 @@ If  $f(x) \mid h(x)$ and $g(x) \mid h(x)$, prove that $f(x)g(x) \mid h(x)$.
 
 \begin{soln}
 
+\quad
+
+\begin{stonk}
+
+Lemma: Bezout's with $F[x]$ instead of integers
+
+Let $a$, $b$, $c$, and $d$ be elements of $F[x]$
+such that $ab+cd=1$
+and $a\mid de$
+(i.e. there exists $f$ such that $af=de$).
+
+\begin{align*}
+ab+cd&=1\\
+abe+cde&=1e\\
+abe+cde&=e\\
+abe+caf&=e\\
+a(be+cf)&=e\\
+a&\mid e
+\end{align*}
+
+\end{stonk}
+
+Since $f(x)$ and $g(x)$ are relatively prime,
+their GCD is $1$,
+and, by the class notes on Feb 27,
+there exist $a,b\in F[x]$ such that
+$fa+gb=1$.
+
+Since $f\mid h$, there exists $c\in F[x]$
+such that $fc=h$.
+
+$g\mid fc$, and there exist $a,b\in F[x]$ such that $fa+gb=1$,
+so, by the earlier lemma, $g\mid c$.
+
+Since $g\mid c$, there exists some $d\in F[x]$ such that $gd=c$.
+
+This means that $h=fc=fgd$.
+
+\begin{align*}
+h&=fgd\\
+fgd&=h\\
+fg&\mid h
+\end{align*}
+
 \end{soln}
 
+\hr
 
 \begin{prob}[4.3.12]
 Express $x^4 - 4$ as a product of irreducibles in $\QQ[x]$, in $\RR[x]$, and in $\CC[x]$.
@@ -161,6 +217,7 @@ $\CC[x]$ & $(x-i\sqrt2)(x+i\sqrt2)(x-\sqrt2)(x+\sqrt2)$\\
 %\begin{soln}
 %
 %\end{soln}
+\hr
 
 \begin{prob}[4.4.16]
 Let $f(x), g(x) \in F[x]$ have degree $\leq n$ and let 
@@ -185,6 +242,7 @@ $f-g$ must therefore be the zero polynomial.
 $f(x)-g(x)=0$, so $f(x)=g(x)$.
 
 \end{soln}
+\hr
 
 \begin{prob}[4.4.19]
 We say that $a \in F$ is a multiple root of  $f(x) \in F[x]$ if  
