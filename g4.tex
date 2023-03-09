@@ -140,7 +140,20 @@ $\{0, 2, 4\}$ has $4$ as a multiplicative identity.
 
 Since $S$ is a subring of $R$, $1_S\in R$.
 
-% TODO
+
+Let $S$ and $R$ be integral domains. Then there exist $1_S \in S$ and $1_R \in R$.
+For some $a\in S^*$ (which is nonempty, since by definition of integral domain, there exists some element $1_S\neq0_S$ and $1_S\in S$), $1_S(a)=(a)1_S=a$.
+Additionally, since $S^*$ is contained in $R$, $a\in R$, so $1_R\cdot a=a\cdot 1_R=a$.
+
+\begin{align*}
+1_S(a)&=a\\
+1_R(a)&=a\\
+1_S(a)&=1_R(a)\\
+1_S\cdot a+(-1_R)\cdot a&= 0\\
+(1_S+(-1_R))a&=0\\
+1_S+(-1_R)&=0\text{ (because integral domain)}\\
+1_S&=1_R
+\end{align*}
 
 \end{soln}
 
