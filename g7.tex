@@ -299,6 +299,8 @@ then, by definition,
 
 \begin{soln}\quad
 
+(a)
+
 Because $H$ and $K$ are both groups, they are nonempty.
 Additionally, they must both have $e_G$, since,
 if they contain any element $a$, they must also contain $a^{-1}$,
@@ -329,6 +331,40 @@ Since $H\cap K$ is nonempty,
 closed under inverses and mulitplication,
 and is entirely composed of elements within $G$,
 $H\cap K$ is a subgroup of $G$.
+
+(b)
+
+(by induction)
+
+Base case: one subgroup
+
+If $\{H_i\}$ is a collection of $1$ subgroup of $G$,
+then the intersection of all $1$ element is also a subgroup of $G$.
+
+Inductive case:
+
+Let $\{H_i\}$ be any collection of $n+1$ subgroups of $G$,
+with indexing set $I$.
+
+Let $k$ be any element of $I$.
+
+By the induction hypothesis,
+$\{a\in G\mid \forall i\in I\setminus \{k\}, a\in H_i\}$ is a subgroup of $G$.
+
+Since $H_k\in\{H_i\}$, $H_k$ is also a subgroup of $G$.
+
+By part (a),
+$\{a\in G\mid \forall i\in I\setminus \{k\}, a\in H_i\}  \cap  H_k$
+is also a subgroup of $G$.
+This subgroup is equivalent to the following:
+\begin{gather*}
+\{a\in G\mid \forall i\in I\setminus \{k\}, a\in H_i\}  \cap  H_k\\
+\{a\in G\mid \forall i\in I\setminus \{k\}, a\in H_i\}  \cap  \{a\in G\mid a\in H_k\}\\
+\{a\in G\mid a\in H_k \text{ and } \forall i\in I\setminus \{k\}, a\in H_i\}\\
+\{a\in G\mid \forall i\in I, a\in H_i\}\\
+\end{gather*}
+
+The inductive case is proven.
 
 \end{soln}
 
