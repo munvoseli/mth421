@@ -297,7 +297,38 @@ then, by definition,
 \]
 \end{prob}
 
-\begin{soln}
+\begin{soln}\quad
+
+Because $H$ and $K$ are both groups, they are nonempty.
+Additionally, they must both have $e_G$, since,
+if they contain any element $a$, they must also contain $a^{-1}$,
+and therefore contain $aa^{-1}=e_G$.
+Since $e_G\in H$ and $e_G\in K$, $e_G\in H\cap K$.
+
+Let $a$ be any member of $H\cap K$.
+This means that $a\in H$ and $a\in K$.
+Since $a\in H$, $a^{-1}\in H$.
+Since $a\in K$, $a^{-1}\in K$.
+Since $a^{-1}\in H$ and $a^{-1}\in K$, $a^{-1}\in H\cap K$.
+$H\cap K$ is closed under inverses.
+
+Let $a$ and $b$ be any members of $H\cap K$.
+This means that $a\in H$, $b\in H$, $a\in K$, and $b\in K$.
+Since $a\in H$ and $b\in H$, $ab\in H$.
+Since $a\in K$ and $b\in K$, $ab\in K$.
+Since $ab\in H$ and $ab\in K$, $ab\in H\cap K$.
+$H\cap K$ is closed under multiplication.
+
+To prove that the set of elements of $H\cap K$
+are a subset of the set of elements of $G$:
+for any element $a$ in $H\cap K$, $a\in H$ and $a\in K$,
+so $a\in H$, and since $H\subseteq G$, $a\in G$.
+Therefore, $H\cap K\subseteq G$.
+
+Since $H\cap K$ is nonempty,
+closed under inverses and mulitplication,
+and is entirely composed of elements within $G$,
+$H\cap K$ is a subgroup of $G$.
 
 \end{soln}
 
