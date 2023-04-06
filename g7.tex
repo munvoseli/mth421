@@ -1,0 +1,315 @@
+\documentclass[12pt]{article}
+
+%\AtEndDocument{\cleardoublepage}
+%\AtEndDocument{% based in \cleardoublepage
+%  \clearpage
+%  \ifodd\value{page}\else
+%    \thispagestyle{empty}%
+%    \hbox{}\newpage
+%  \fi
+%}
+
+\usepackage[margin=1.0in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{fancyvrb}
+\usepackage{graphics}
+
+\usepackage{enumitem}
+
+\theoremstyle{definition}
+\newtheorem*{prob}{Problem}
+\newtheorem*{soln}{Solution}
+
+\DeclareMathOperator{\lcm}{lcm}
+
+\newcommand{\CC}{{\mathbb{C}}}
+\newcommand{\ZZ}{{\mathbb{Z}}}
+\newcommand{\RR}{{\mathbb{R}}}
+\newcommand{\NN}{{\mathbb{N}}}
+\newcommand{\QQ}{{\mathbb{Q}}}
+\newcommand{\PP}{{\mathbb{P}}}
+
+
+\renewcommand{\mod}{\operatorname{mod}}
+
+\begin{document}
+
+% T I T L E
+%
+\title{421 HW 7 Group}
+\author{\textbf{change this to your names}}
+
+\date{}
+
+\maketitle
+
+\textbf{NOTE}: Unless stated otherwise, $G$ is a (multiplicative) 
+group with identity element $e$.
+
+
+
+\begin{prob}[7.2.8]
+Give an example of  a group that contains nonidentity elements of  
+finite order and of  infinite order. (That is, just one group
+has both types of nonidentity elements.) Give an example of each type of element
+in your chosen group.
+\end{prob}
+
+\begin{soln}\quad
+
+$M_2(\RR)$
+
+Of finite order:
+
+\begin{equation*}
+\left[
+\begin{tabular}{c c}
+1 & 0\\
+0 & -1
+\end{tabular}
+\right]
+\end{equation*}
+
+Of infinite order:
+
+\begin{equation*}
+\left[
+\begin{tabular}{c c}
+2 & 0\\
+0 & 2
+\end{tabular}
+\right]
+\end{equation*}
+
+\end{soln}
+
+\begin{prob}[7.2.10]
+Find the order of  every element in each group:\\
+(a) $\ZZ_4$ \quad    (b) $\ZZ_4 \times \ZZ_2$ \quad    (c) $S_3$  
+\quad    (d) $D_4$  \quad   (e) $\ZZ$
+\end{prob}
+
+\begin{soln}\quad
+
+(a) $\ZZ_4$
+
+\begin{equation*}
+\begin{tabular}{c c}
+0 & 1\\
+1 & 4\\
+2 & 2\\
+3 & 4
+\end{tabular}
+\end{equation*}
+
+(b) $\ZZ_4\times \ZZ_2$
+
+\begin{equation*}
+\begin{tabular}{c c}
+(0, 0) & 1\\
+(1, 0) & 4\\
+(2, 0) & 2\\
+(3, 0) & 4\\
+(0, 1) & 2\\
+(1, 1) & 4\\
+(2, 1) & 2\\
+(3, 1) & 4
+\end{tabular}
+\end{equation*}
+
+(c) $S_3$
+
+\begin{equation*}
+\begin{tabular}{c c}
+(0, 1, 2) & 1\\
+(0, 2, 1) & 2\\
+(1, 0, 2) & 2\\
+(2, 1, 0) & 2\\
+(1, 2, 0) & 3\\
+(2, 0, 1) & 3
+\end{tabular}
+\end{equation*}
+
+(d) $D_4$
+
+\begin{equation*}
+\begin{tabular}{c c}
+$r_0$ & 1\\
+$r_1$ & 4\\
+$r_2$ & 2\\
+$r_3$ & 4\\
+$h$ & 2\\
+$v$ & 2\\
+$d$ & 2\\
+$$ & 2 % TODO
+\end{tabular}
+\end{equation*}
+
+(e) $\ZZ$
+
+0 has an order of 1.
+All other elements of $\ZZ$ have infinite order.
+
+\end{soln}
+
+%\begin{prob}[7.2.13]
+%If  $G$ is a finite group of  order $n$ and $a\in G$, prove that 
+%$|a| \leq n$. 
+%[Hint: Consider the $n + 1$ elements $e = a^0, a, a^2, a^3, \dots , a^n$. 
+%Are they all distinct?] Thus every element in a finite group has finite order. 
+%(Note: The converse, however, is false; see Exercise 25 in Section 8.3 for an infinite group 
+%in which every element has finite order. You don't need to do anything about this note.)
+%\end{prob}
+%
+%\begin{soln}
+%
+%\end{soln}
+
+\begin{prob}[7.2.19]
+If $a, b\in G$, prove that $|bab^{-1}| = |a|$. [Keep in mind there
+are finite and infinite cases.]
+\end{prob}
+
+\begin{soln}\quad
+
+Lemma: $(bab^{-1})^n=ba^nb^{-1}$ for all $n\in\ZZ^+$
+
+Base case: $(bab^{-1})^1=ba^1b^{-1}$
+
+Inductive case:
+\begin{gather*}
+(bab^{-1})^n=ba^nb^{-1}\\
+(bab^{-1})^nbab^{-1}=ba^nb^{-1}bab^{-1}\\
+(bab^{-1})^nbab^{-1}=ba^nab^{-1}\\
+(bab^{-1})^{n+1}=ba^{n+1}b^{-1}\\
+\end{gather*}
+
+The infinite case:
+
+Suppose $|a|=\infty$.
+This means that, for all $n\in\ZZ^+$, $a^n\neq e$.
+%TODO turn into english
+
+\begin{gather*}
+|a|=\infty\\
+\Updownarrow\\
+\forall n\in\ZZ^+\quad a^n\neq e\\
+\Updownarrow\\
+\forall n\in\ZZ^+\quad ba^nb^{-1}\neq bb^{-1}\\
+\Updownarrow\\
+\forall n\in\ZZ^+\quad ba^nb^{-1}\neq e\\
+\Updownarrow (a^3=ab^{-1}bab^{-1}ba)\\
+\forall n\in\ZZ^+\quad (bab^{-1})^n\neq e\\
+\Updownarrow\\
+|bab^{-1}|=\infty
+\end{gather*}
+
+The finite case:
+
+\begin{gather*}
+\left|a\right|=n\\
+a^n=e\\
+ba^nb^{-1}=e\\
+(bab^{-1})^n=e\\
+\left|bab^{-1}\right|\mid n\\
+\left|bab^{-1}\right|\mid \left|a\right|\\
+\end{gather*}
+
+\begin{gather*}
+\left|bab^{-1}\right|=m\\
+(bab^{-1})^m=e\\
+ba^mb^{-1}=e\\
+a^m=e\\
+\left|a\right| \mid m\\
+\left|a\right| \mid \left|bab^{-1}\right|\\
+\end{gather*}
+
+\begin{gather*}
+\left|a\right| \mid \left|bab^{-1}\right|\\
+\left|bab^{-1}\right|\mid \left|a\right|\\
+\left|a\right|\in \ZZ^+\\
+\left|bab^{-1}\right| \in\ZZ^+\\
+\left|bab^{-1}\right|=\left|a\right|
+\end{gather*}
+
+\end{soln}
+
+\begin{prob}[7.2.32]
+If  $|G|$ is even, prove that $G$ contains an element of  order $2$. 
+[Hint: The identity element is its own inverse. See the hint for Exercise 27.]
+\end{prob}
+
+\begin{soln}\quad
+
+Since $|G|$ is even,
+let the order of $G$ be expressed as $2n$, for some $n\in\ZZ^+$.
+
+For contradiction, suppose that no elements of $G$ are of order $2$.
+
+(less formally: put all elements of $G$ into pairs of inverses.
+there will be two elements left: the identity element,
+and one element which must be its own inverse (of order 2))
+
+Let $S_{2n-1}$ be the set of all nonidentity elements of $G$.
+
+For all $m\in[1,n)\cap\ZZ$, let $a$ be some element of $S_{2m+1}$.
+
+\end{soln}
+
+\begin{prob}[7.2.36]
+Suppose $a, b\in G$ with $|a| = 5$, $b \neq e$, and $aba^{-1} = b^2$. 
+Find $|b|$.
+\end{prob}
+
+\begin{soln}
+
+\begin{align*}
+aba^{-1}&=b^2\\
+b&=a^4b^2a\\
+b&=a^4bba\\
+&=a^4(a^4bba)(a^4bba)a\\
+&=a^3b^4a^2\\
+&=...\\
+&=a^5b^{32}a^5\\
+&=eb^{32}e\\
+&=b^{32}\\
+b&=b^{32}\\
+b^{-1}b&=b^{-1}b^{32}\\
+e&=b^{31}\\
+|b|&\mid 31\\
+&\text{since $b\neq e$, $|b|\neq 1$}\\
+|b|&=31
+\end{align*}
+
+\end{soln}
+
+\begin{prob}[7.3.15] \text{ }
+\textbf{(a)}   Let $H$ and $K$ be subgroups of a group $G$. 
+Prove that $H \cap K$ is a subgroup of  $G$.  
+
+\textbf{(b)}   Let $\{H_i\}$ be any collection of  subgroups of  $G$. 
+Prove that $\cap H_i$ is a subgroup of  $G$.
+
+Recall: If $\{ H_i \mid i \in I \}$ is a set of subsets of $G$, with indexing set $I$,
+then, by definition, 
+\[
+\cap H_i = \cap_{i \in I} H_i = \{ a \in G \mid \forall i \in I, a \in H_i \}.
+\]
+\end{prob}
+
+\begin{soln}
+
+\end{soln}
+
+\begin{prob}[7.3.26] \text{ }
+\textbf{(a)}   Let $H$ and $K$ be subgroups of  an abelian group $G$ and let 
+$HK = \{ab \mid a\in H, b\in K\}$. Prove that $HK$ is a subgroup of  $G$.
+
+\textbf{(b)} Show that part (a) may be false if  $G$ is not abelian.
+\end{prob}
+
+\begin{soln}
+
+\end{soln}
+
+\end{document}
