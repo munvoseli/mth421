@@ -91,6 +91,28 @@ exercise so as not to conflict with Exercise 7.4.33.]
 
 \begin{soln}
 
+To prove: $L$ is nonempty
+
+$J$ has $e_H$ since it's a subgroup of $H$.
+
+$f(e_G)$ must be $e_H$ as a result of $f$ being a homomorphism.
+
+Since $f(e_G)\in L$, $L$ is nonempty.
+
+To prove: $L$ is closed under multiplication
+
+Let $a, b\in L$.  Since $f$ is a homomorphism, $f(a)f(b)=f(ab)$.
+By the definition of $L$, $f(a), f(b)\in J$.
+Since $J$ is a group, $f(ab)\in J$, and $ab\in L$.
+
+To prove: $L$ is closed under inverses
+
+Let $a\in L$.
+By the definition of $L$, $f(a)\in J$.
+Since $J$ is a group, $f(a)^{-1}\in J$.
+As a result of $f$ being a homomorphism, $f(a^{-1})\in J$.
+By the definition of $L$, $a^{-1}\in L$.
+
 \end{soln}
 
 \begin{prob}[7.4.34]
@@ -127,6 +149,10 @@ Prove that $\cong$ is an equivalence relation.
 \end{prob}
 
 \begin{soln}
+
+% reflexive: identity function
+% symmetric:
+% transitive:
 
 \end{soln}
 
