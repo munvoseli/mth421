@@ -1,0 +1,135 @@
+\documentclass[12pt]{article}
+
+%\AtEndDocument{\cleardoublepage}
+%\AtEndDocument{% based in \cleardoublepage
+%  \clearpage
+%  \ifodd\value{page}\else
+%    \thispagestyle{empty}%
+%    \hbox{}\newpage
+%  \fi
+%}
+
+\usepackage[margin=1.0in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{fancyvrb}
+\usepackage{graphics}
+
+\usepackage{enumitem}
+
+\theoremstyle{definition}
+\newtheorem*{prob}{Problem}
+\newtheorem*{soln}{Solution}
+
+\DeclareMathOperator{\lcm}{lcm}
+
+\newcommand{\CC}{{\mathbb{C}}}
+\newcommand{\ZZ}{{\mathbb{Z}}}
+\newcommand{\RR}{{\mathbb{R}}}
+\newcommand{\NN}{{\mathbb{N}}}
+\newcommand{\QQ}{{\mathbb{Q}}}
+\newcommand{\PP}{{\mathbb{P}}}
+
+
+\renewcommand{\mod}{\operatorname{mod}}
+
+\begin{document}
+
+% T I T L E
+%
+\title{421 HW 8 Group}
+\author{\textbf{change this to your names}}
+
+\date{}
+
+\maketitle
+
+\textbf{NOTE}: Unless stated otherwise, $G$ is a (multiplicative) 
+group with identity element $e$.
+
+\begin{prob}[7.4.26]
+If  $G = \langle a\rangle$ is a cyclic group and $f:G \to H$ is a surjective 
+homomorphism of  groups, show that $f(a)$ is a generator of $H$, 
+that is, $H$ is the cyclic group $\langle f(a)\rangle$. [Hint: Exercise 7.4.15.]
+\end{prob}
+
+\begin{soln}
+
+By 7.4.15, $f(a)^n=f(a^n)$.
+
+Since $f$ is surjective, $\forall h\in H\quad \exists g\in G\quad f(g)=h$.
+
+Since $g\in G$, $g=a^n$ for some $n$, and thus
+\begin{align*}
+f(g)&=h\\
+f(a^n)&=h\\
+f(a)^n&=h
+\end{align*}
+
+Every member of $H$ is some power of $f(a)$.
+
+\end{soln}
+
+%\begin{prob}[7.4.29]
+%If  $f:G \to H$ is an injective homomorphism of groups and $a\in G$, 
+%prove that  $|f(a)| = |a|$. [Remember there are finite and infinite cases.]
+%\end{prob}
+%
+%\begin{soln}
+%
+%\end{soln}
+
+
+\begin{prob}[7.4.30]
+Let $f:G \to H$ be a homomorphism of groups and let $J$ be a subgroup of $H$. 
+Prove that the set $L=\{a\in G \mid f(a)\in J\}$ is a subgroup of $G$.
+[Note: The set $L$ is the \emph{inverse image} of $J$. You may have seen the
+notation $L=f^{-1}(J)$. Exercise 7.4.33 is the special case $J = \{ e_H \}$.
+That is, $K_f = f^{-1}(\{ e_H \})$, the \emph{kernel} of $f$. 
+I changed some of the letters in this
+exercise so as not to conflict with Exercise 7.4.33.]
+\end{prob}
+
+\begin{soln}
+
+\end{soln}
+
+\begin{prob}[7.4.34]
+The function $f:\ZZ \to \ZZ_5$ given by $f(x) = [x]$ is a homomorphism by Example 13. 
+Find $K_f$ 
+and justify your finding. (Notation as in Exercise 7.4.33.)
+\end{prob}
+
+\begin{soln}
+
+\end{soln}
+
+
+
+
+\begin{prob}[7.4.53]
+Let $f:G \to H$ be an isomorphism of  groups. Let $g:H \to G$ 
+be the inverse function of  $f$ as defined in Appendix B. 
+Prove that $g$ is also an isomorphism of  groups. 
+(You may assume that the inverse of a bijection is a bijection, since
+you hopefully saw this in MTH 331.)
+[Hint: To show that $g(ab) = g(a)g(b)$, 
+consider the images of  the left-and right-hand sides under $f$ and use the facts 
+that $f$ is a homomorphism and $f \circ g$ is the identity map.]
+\end{prob}
+
+\begin{soln}
+
+\end{soln}
+
+\begin{prob}[7.4.DK2] Let $\cong$ represent isomorphism between groups.
+Prove that $\cong$ is an equivalence relation.
+[Hint: See 7.4 Example 8, Individual Exercise 7.4.DK1, and Exercise 7.4.53]
+\end{prob}
+
+\begin{soln}
+
+\end{soln}
+
+
+
+\end{document}
