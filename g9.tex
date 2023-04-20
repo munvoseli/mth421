@@ -1,0 +1,185 @@
+\documentclass[12pt]{article}
+
+%\AtEndDocument{\cleardoublepage}
+%\AtEndDocument{% based in \cleardoublepage
+%  \clearpage
+%  \ifodd\value{page}\else
+%    \thispagestyle{empty}%
+%    \hbox{}\newpage
+%  \fi
+%}
+
+\usepackage[margin=1.0in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{fancyvrb}
+\usepackage{graphics}
+
+\usepackage{enumitem}
+
+\theoremstyle{definition}
+\newtheorem*{prob}{Problem}
+\newtheorem*{soln}{Solution}
+
+\DeclareMathOperator{\lcm}{lcm}
+
+\newcommand{\CC}{{\mathbb{C}}}
+\newcommand{\ZZ}{{\mathbb{Z}}}
+\newcommand{\RR}{{\mathbb{R}}}
+\newcommand{\NN}{{\mathbb{N}}}
+\newcommand{\QQ}{{\mathbb{Q}}}
+\newcommand{\PP}{{\mathbb{P}}}
+
+
+\renewcommand{\mod}{\operatorname{mod}}
+
+\begin{document}
+
+% T I T L E
+%
+\title{421 HW 9 Group}
+\author{\textbf{change this to your names}}
+
+\date{}
+
+\maketitle
+
+\textbf{NOTE}: Unless stated otherwise, $G$ is a (multiplicative) 
+group with identity element $e$.
+
+\textbf{Hint}: Some of these problems are related.
+
+\begin{prob}[8.1.21]
+Let $H$ and $K$, each of prime order $p$, be subgroups of a group $G$. 
+If  $H \neq K$, prove that $H \cap K = \langle e \rangle$.
+\end{prob}
+
+\begin{soln}
+
+\end{soln}
+
+\begin{prob}[8.1.36]
+Let $H$ and $K$ be subgroups of a finite group $G$ such that $[G:H] = p$ and $[G:K] = q$,
+ with $p$ and $q$ distinct primes. Prove that $pq$ divides $[G:H \cap K]$.
+\end{prob}
+
+\begin{soln}
+
+\end{soln}
+
+\begin{prob}[8.1.37]
+Let $G$ be an abelian group of order $n$ and let $k$ be a positive integer. 
+If $(k, n) = 1$, prove that the function 
+$f:G \to G$ given by $f(a)= a^k$ is an isomorphism. 
+[Hint: To show $f$ is a bijection, find a formula for $f^{-1}$.]
+\end{prob}
+
+\begin{soln}
+
+\end{soln}
+
+
+\begin{prob}[8.1.40]
+If  a prime $p$ divides the order of a finite group $G$, prove that the number of 
+elements of order $p$ in $G$ is a multiple of  $p - 1$.
+[Cauchy's Theorem says that the number of elements of order $p$ is positive.
+However, you do not need to prove that or apply it. That is, for this exercise,
+the proof will work fine if the number of elements of order $p$
+is $0(p-1) = 0$.]
+\end{prob}
+
+\begin{soln}\quad
+
+Outline:
+
+Let $Y=\{a\in G\ \ \mid\ \ |a|=p\}$
+
+Let $\sim$ be an equivalence relation on $Y$ such that
+$a\sim b\Leftrightarrow b\in\langle a\rangle$
+(conceptually, this should be equivalent to
+$a\sim b\Leftrightarrow \langle a\rangle=\langle b\rangle$,
+but this is not proven).
+
+Each equivalence class is of size $p-1$ ($[a]=\langle a\rangle\setminus\{e\}$).
+
+$Y$ is the union of these disjoint equivalence classes.
+
+$|Y|$ must be a multiple of $p-1$.
+
+This depends upon the theorem that any group of size $p$,
+where $p$ is prime, is isomorphic to $\ZZ_p$.
+
+Proof:
+
+To prove $[a]\subseteq\langle a\rangle\setminus\{e\}$
+
+$\begin{gathered}
+b\in [a]\\
+b\in \langle a\rangle\\
+[a]\subseteq Y\\
+|b|=p\\
+b\neq e\\
+b\in \langle a\rangle\setminus\{e\}
+\end{gathered}$
+
+To prove $\langle a\rangle\setminus\{e\}\subseteq[a]$
+
+$\begin{gathered}
+b\in\langle a\rangle\setminus\{e\}\\
+|b|=p\\
+b\in Y\\
+b\in\langle a\rangle\\
+b\in[a]
+\end{gathered}$
+
+Therefore, $\langle a\rangle\setminus\{e\}=[a]$.
+
+To prove $\forall a\in Y\quad \langle a\rangle\cong\ZZ_p$
+
+$\sim$ is reflexive: yeah
+
+$\sim$ is symmetric:
+
+$\begin{gathered}
+b\in \langle a\rangle\\
+\exists k\in\ZZ\quad b=a^k\\
+b^{-k}=a\\
+a\in \langle b\rangle
+\end{gathered}$
+
+$\sim$ is transitive:
+
+$\begin{gathered}
+a\sim b\\
+b\sim c\\
+\exists x,y\in \ZZ \quad b=a^x,c=a^y\\
+c=a^{xy}\\
+\end{gathered}$
+
+$x$ cannot be a multiple of $p$, since, if it were, $b=e$.
+$y$ can similarly not be a multiple of $p$.
+By Euclid's lemma, $p\nmid xy$.
+Thus, $a\sim c$.
+
+Each equivalence class is of order $p-1$:
+
+$e\not\in [a]$, so $[a][e]=\langle a\rangle$.
+
+By closure in $G$, $\langle a\rangle\leq G$.
+
+Since $|a|=p$, $|\langle a\rangle|=p$, so $\langle a\rangle\cong \ZZ_p$.
+
+\end{soln}
+
+
+\begin{prob}[8.1.41]
+Prove that a group of  order $33$ contains an element of order $3$.
+[Of course you are not allowed to apply Cauchy's Theorem.]
+\end{prob}
+
+\begin{soln}
+
+\end{soln}
+
+
+
+\end{document}
