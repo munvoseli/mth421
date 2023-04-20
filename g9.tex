@@ -176,7 +176,42 @@ Prove that a group of  order $33$ contains an element of order $3$.
 [Of course you are not allowed to apply Cauchy's Theorem.]
 \end{prob}
 
-\begin{soln}
+\begin{soln}\quad
+
+$\begin{gathered}
+\forall g\in G\quad g^{11\cdot 3}=e\\
+(g^{11})^3=e\\
+|g^{11}|\mid 3\\
+|g^{11}|=3\text{ or }|g^{11}|=1\\
+|g^{11}|=3\text{ or }(g^{11}=e)\\
+|g^{11}|=3\text{ or }(|g|=11\text{ or }g=e)\\
+|g^{11}|=3\text{ or }|g|=11\text{ or }g=e\\
+\end{gathered}$
+
+It is unproven, but these are all mutually exclusive things.
+For any given value of $g\in G$, exactly one of these things must be true.
+
+By $8.1.41$, for some $n\in\ZZ$, the number of elements for which
+$|g|=11$ is $10n$.
+
+There is one element for which $g=e$.
+
+Let the number of elements $g$ for which $|g^{11}|=3$ be denoted by $m$.
+
+33 is the total number of elements, so
+
+$\begin{gathered}
+33=m+10n+1\\
+33-10n-1=m\\
+32-10n-1=m
+\end{gathered}$
+
+Since $m\geq 0$, and $n\geq 0$, the possibilities for $m$ are 32, 22, 12, and 2.
+
+This means there exists $a\in G$ for which $|a^{11}|=3$.
+
+$|a^{11}|$ is an element of order 3, so this is proven.
+
 
 \end{soln}
 
