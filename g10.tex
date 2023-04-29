@@ -1,0 +1,329 @@
+\documentclass[12pt]{article}
+
+%\AtEndDocument{\cleardoublepage}
+%\AtEndDocument{% based in \cleardoublepage
+%  \clearpage
+%  \ifodd\value{page}\else
+%    \thispagestyle{empty}%
+%    \hbox{}\newpage
+%  \fi
+%}
+
+\usepackage[margin=1.0in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{fancyvrb}
+\usepackage{graphics}
+
+\usepackage{enumitem}
+
+\theoremstyle{definition}
+\newtheorem*{prob}{Problem}
+\newtheorem*{soln}{Solution}
+
+\DeclareMathOperator{\lcm}{lcm}
+
+\newcommand{\CC}{{\mathbb{C}}}
+\newcommand{\ZZ}{{\mathbb{Z}}}
+\newcommand{\RR}{{\mathbb{R}}}
+\newcommand{\NN}{{\mathbb{N}}}
+\newcommand{\QQ}{{\mathbb{Q}}}
+\newcommand{\PP}{{\mathbb{P}}}
+
+
+\renewcommand{\mod}{\operatorname{mod}}
+
+\begin{document}
+
+% T I T L E
+%
+\title{421 HW 13 Group}
+\author{\textbf{Put names here}}
+
+\date{}
+
+\maketitle
+
+\textbf{NOTE}: Unless stated otherwise, $G$ is a (multiplicative) 
+group with identity element $e$.
+
+
+
+\begin{prob}[8.2.20] \text{ }
+
+(a)   Let $N$ and $K$ be subgroups of a group $G$. 
+If $N$ is normal in $G$, prove that $NK = \{nk \mid n\in N, k\in K\}$ 
+is a subgroup of $G$. [Compare Exercise 26(b) of Section 7.3.]     
+
+(b) If  both $N$ and $K$ are normal subgroups of  $G$, prove that $NK$ is normal.
+\end{prob}
+
+\begin{soln}\quad
+
+(a)
+
+normality: $\forall n\in N,g\in G\quad gng^{-1}\in N$
+
+To prove: $e_G\in NK$
+
+Since $N$ and $K$ are subgroups of $G$, $e_G\in N$, and $e_G\in K$.
+
+Since $e_G\in N$ and $e_G\in K$, $e_Ge_G\in NK$.
+
+$e_G\in NK$
+
+To prove: $NK$ is closed under inverses
+
+Let $nk\in NK$, where $n\in N$ and $k\in K$.
+
+$N$ and $K$ are both groups, so $n^{-1}\in N$ and $k^{-1}\in K$.
+
+Since $n^{-1}\in N$, $N$ is a normal subgroup of $G$, and $k^{-1}\in G$,
+$k^{-1}n^{-1}k\in N$.
+
+Since $k^{-1}n^{-1}k\in N$ and $k^{-1}\in K$,
+$k^{-1}n^{-1}kk^{-1}\in NK$.
+
+Equivalently, $k^{-1}n^{-1}=(nk)^{-1}\in NK$.
+
+$NK$ is closed under inverses.
+
+To prove: $NK$ is closed under multiplication
+
+Let $nk,mj\in NK$, for some $n,m\in N$ and $k,j\in K$.
+
+Since $N$ is normal, $m\in N$, and $k\in K$, $kmk^{-1}\in K$.
+
+\begin{tabular}{c c c}
+$\begin{gathered}
+n\in N\quad kmk^{-1}\in N\\
+\Downarrow\\
+nkmk^{-1}\in N
+\end{gathered}$ & &
+$\begin{gathered}
+k,j\in K\\
+\Downarrow\\
+kj\in K
+\end{gathered}$\\
+&
+$\begin{gathered}
+nkmk^{-1} kj\in NK\\
+nkmj\in NK\\
+(nk)(mj)\in NK
+\end{gathered}$
+\end{tabular}
+
+$NK$ is closed under multiplication.
+
+(b)
+
+Let $nk\in NK$, for some $n\in N$ and $k\in K$.
+
+Let $g$ be an arbitrary element of $G$.
+
+Since $N$ and $K$ are normal, $gng^{-1}\in N$ and $gkg^{-1}\in K$.
+
+By the definition of $NK$, $gng^{-1}gkg^{-1}\in NK$.
+
+By inverses, $gnkg^{-1}\in NK$.
+
+$NK$ is normal.
+
+\end{soln}
+
+
+
+
+\begin{prob}[8.3.9]
+Let $G = \ZZ_6 \times \ZZ_2$ and let $N$ be the cyclic subgroup $\langle (1, 1) \rangle$. 
+Describe the quotient group $G/N$. [That is, what well-known group $G/N$ isomorphic to?]
+Justify.
+\end{prob}
+
+\begin{soln}
+
+$|G/N|=[G:N]=\frac{|G|}{|N|}=\frac{12}{6}=2$.
+
+All groups of order 2 are isomorphic to $\ZZ_2$.
+
+$G/N$ is isomorphic to $\ZZ_2$.
+
+\end{soln}
+
+\begin{prob}[8.3.25] \text{ }
+
+(a) Find the order of  $\frac{8}{9}$, $\frac{14}{5}$, and 
+$\frac{48}{28}$ in the additive group $\QQ/\ZZ$.
+
+(b) Prove that every element of  $\QQ/\ZZ$ has finite order.     
+
+(c) Prove that $\QQ/\ZZ$ contains elements of  every possible finite order.
+\end{prob}
+
+\begin{soln}\quad
+
+The identity element is $\ZZ$.
+
+(a)
+
+$|\frac89|=9$, $|\frac{14}5=5$, $|\frac{48}{28}|=|\frac{12}7|=7$.
+
+(b)
+
+Let $\frac ab$ be an arbitrary element of $\QQ/\ZZ$,
+for some $a\in \ZZ$ and $b\in\ZZ^+$.
+
+$b\frac ab=a\in\ZZ$, so $|\frac ab|\mid b$.
+
+$|\frac ab|\mid b$, and $b>0$, so $|\frac ab|\leq b$
+
+The order of this element is less than a finite integer, and so must be finite.
+
+Since this element was arbitrary, the order of any element is finite.
+
+(c) %TODO
+
+% 1/n
+
+\end{soln}
+
+\begin{prob}[8.4.18]
+Find all homomorphic images of  $D_4$.
+In other words, if $f:D_4 \to H$ is a surjective homomorphism,
+then what are all the possibilities for $H$, up to isomorphism? [Hint: 
+First Isomorphism Theorem.]
+\end{prob}
+
+\begin{soln}
+
+\end{soln}
+
+\begin{prob}[8.4.26]
+Prove that $(\ZZ \times \ZZ)/\langle (2, 2) \rangle \cong \ZZ \times \ZZ_2$. 
+[Hint: Show that $f:\ZZ \times \ZZ \to \ZZ \times \ZZ_2$, given by 
+$f ((a, b)) = (a - b, [b]_2)$, 
+is a surjective homomorphism.]
+\end{prob}
+
+\begin{soln}
+
+\end{soln}
+
+
+\begin{prob}[3.3.16]
+Let $T$, $R$, and $F$ be the four-element rings whose tables are given in Example 5 of  
+Section 3.1 and in Exercises 2 and 3 of  Section 3.1. 
+Show that no two of  these rings are isomorphic.
+
+For convenience, here are their operation tables:
+
+$T = \{z,r,s,t \}$
+
+\[
+\begin{array}{c|cccc}
++ & z & r & s & t \\
+\hline
+z      & z & r & s & t  \\
+r      & r & z & t & s  \\
+s      & s & t & z & r  \\
+t      & t & s & r & z 
+\end{array}
+\qquad\qquad
+\begin{array}{c|cccc}
+\cdot & z & r & s & t \\
+\hline
+z      & z & z & z & z  \\
+r      & z & z & r & r  \\
+s      & z & z & s & s  \\
+t      & z & z & t & t 
+\end{array}
+\]
+
+$R = \{ 0, e, b, c \}$
+
+\[
+\begin{array}{c|cccc}
++ & 0 & e & b & c \\
+\hline
+0      & 0 & e & b & c  \\
+e      & e & 0 & c & b  \\
+b      & b & c & 0 & e  \\
+c      & c & b & e & 0 
+\end{array}
+\qquad\qquad
+\begin{array}{c|cccc}
+\cdot & 0 & e & b & c \\
+\hline
+0      & 0 & 0 & 0 & 0  \\
+e      & 0 & e & b & c  \\
+b      & 0 & b & b & 0  \\
+c      & 0 & c & 0 & c 
+\end{array}
+\]
+
+$F = \{ 0, e, a, b \}$
+
+\[
+\begin{array}{c|cccc}
++ & 0 & e & a & b \\
+\hline
+0      & 0 & e & a & b  \\
+e      & e & 0 & b & a  \\
+a      & a & b & 0 & e  \\
+b      & b & a & e & 0 
+\end{array}
+\qquad\qquad
+\begin{array}{c|cccc}
+\cdot & 0 & e & a & b \\
+\hline
+0      & 0 & 0 & 0 & 0  \\
+e      & 0 & e & a & b  \\
+a      & 0 & a & b & e  \\
+b      & 0 & b & e & a 
+\end{array}
+\]
+\end{prob}
+
+\begin{soln}
+
+\end{soln}
+
+\begin{prob}[3.3.34]
+If  $f:R \to S$ is an isomomorphism of  rings, which of  the following properties are 
+preserved by this isomorphism? Justify your answers.     
+
+(a) $a\in R$ is a zero divisor.
+
+(b) $a\in R$ is idempotent. (That is, $a^2=a$.)
+
+(c) $R$ is an integral domain.
+\end{prob}
+
+\begin{soln}
+
+\end{soln}
+
+\begin{prob}[3.3.38]
+Let $F$ be a field and $f:F \to R$ a homomorphism of  rings.     
+
+(a)   If there is a nonzero element $c$ of  $F$ such that $f(c) = 0_R$, 
+prove that $f$ is the zero homorphism (that is, $f(x) = 0_R$ for every $x\in F$). 
+[Hint: $c^{-1}$ exists (Why?). If  $x\in F$, consider $f(xcc^{-1})$.]     
+
+(b)   Prove that $f$ is either injective or the zero homomorphism. 
+[Hint: If  $f$ is not the zero homomorphism and $f(a) = f(b)$, then $f(a - b) = 0_R$.]
+\end{prob}
+
+\begin{soln}
+
+\end{soln}
+
+
+\begin{prob}[3.3.42]
+If  $(m, n) \neq 1$, prove that $\ZZ_{mn}$ is not isomorphic to $\ZZ_m \times \ZZ_n$.
+\end{prob}
+
+\begin{soln}
+
+\end{soln}
+
+\end{document}
