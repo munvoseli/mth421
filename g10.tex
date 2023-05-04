@@ -31,6 +31,7 @@
 
 
 \renewcommand{\mod}{\operatorname{mod}}
+\renewcommand{\ker}{\operatorname{ker}}
 
 \begin{document}
 
@@ -211,6 +212,38 @@ First Isomorphism Theorem.]
 
 \begin{soln}
 
+The First Isomorphism Theorem says that $D_4/\ker f\cong H$.
+
+Since $D_4/\ker f\cong H$, $|D_4/\ker f| = |H|$
+
+Theorem 8.13 says that, since $D_4$ is finite, $|D_4/\ker f|=|D_4|/|\ker f|$.
+
+Since $|H|=|D_4|/|\ker f|$, $|H||\ker f|=|D_4$, so $|H|\mid |D_4|$.
+
+Since $|D_4|=8$, $H$ can be of order 8, 4, 2, or 1.
+
+Case $|H|=8$: $H$ and $D_4$ have the same number of elements,
+so any surjective homomorphism $f$ is also an injection.
+Since $f$ is a surjection, an injection, and a homomorphism,
+it is a bijective homomorphism, and therefore an isomorphism.
+In this case, $H\cong D_4$.
+
+Case $|H|=4,|\ker f|=2$: There are two possibilities ($\ZZ_4$ and $\ZZ_2\times\ZZ_2$).
+Setting the kernel of $f$ to $\{r_0,r_2\}$ makes $D_4/\ker f$
+isomorphic to $\ZZ_2\times\ZZ_2$.
+
+By theorem 8.16, the kernel of any $f$ must be a normal subgroup of $D_4$.
+If the kernel of $f$ contains $r_1$ or $r_3$, it can't even be a group
+since a group must contain both identity and inverses,
+and there's just not enough space in a group of order 2.
+If the kernel of $f$ contains $d$, $h$, $v$, or $t$,
+then (by checking each case), it isn't a normal subgroup.
+This excludes $\ZZ_4$ as a possibility.
+
+Case $|H|=2$: There is only one possibility, $\ZZ_2$.
+
+Case $|H|=1$: The only possibility is $\{e\}$.
+
 \end{soln}
 
 \begin{prob}[8.4.26]
@@ -220,7 +253,117 @@ $f ((a, b)) = (a - b, [b]_2)$,
 is a surjective homomorphism.]
 \end{prob}
 
-\begin{soln}
+\begin{soln}\quad
+
+$f((1,1))=(0,[1]_2)$
+
+$f((2,1))=(1,[1]_2)$
+
+$f((1,1)(2,1))=f((2,1)=(1,[1]_2)$
+
+$f((1,1))f((2,1))=(0,[1]_2)(1,[1]_2)=(0,[1]_2)$
+
+$f((1,1)(2,1))\neq f((1,1))f((2,1))$
+
+the provided $f$ is not a homomorphism??????
+
+The first isomorphism states that,
+given groups $G$ and $H$,
+and a surjective homomorphism $f: G\to H$,
+$G/\ker f\cong H$.
+
+Let $f:\ZZ \times \ZZ \to \ZZ \times \ZZ_2$ be defined as
+$f ((a, b)) = (a - b, [b]_2)$.
+
+To prove: $f$ is surjective
+
+Let $(c, d)$ be an arbitrary element of $\ZZ\times\ZZ_2$.
+
+Let $b$ be $0$ if $d=[0]$, or $1$ if $d=[1]$.
+
+Let $a$ be $c+d$.
+
+$(a, b)$ is an element of $\ZZ\times\ZZ$, and $f((a,b))=(c,d)$.
+
+Since $(c, d)$ was arbitrary, every element in $\ZZ\times\ZZ_2$ has a preimage.
+
+$f$ is surjective.
+
+To prove: $f$ is a homomorphism.
+
+Let $(a, b)$ and $(c, d)$ be arbitrary elements of $\ZZ\times\ZZ$.
+
+To check homomorphism of addition:
+
+\begin{center}
+\begin{tabular}{c|c}
+$\begin{gathered}
+f((a,b))+f((c,d))\\
+(a,[b]_2)+(c,[d]_2)\\
+(a+c,[b]_2+[d]_2)
+\end{gathered}$
+&
+$\begin{gathered}
+f((a,b)+(c,d))\\
+f((a+c,b+d))\\
+(a+c,[b+d]_2)
+\end{gathered}$
+\end{tabular}
+
+To check whether $[b]_2+[d]_2=[b+d]_2$, see 4 cases:
+
+\begin{tabular}{c c c c}
+$b$ & $d$ & $[b+d]_2$ & $[b]_2+[d]_2$ \\
+even & even & 0 & 0\\
+even & odd & 1 & 1\\
+odd & even & 1 & 1\\
+odd & odd & 0 & 0
+\end{tabular}
+
+It is always that $[b]_2+[d]_2=[b+d]_2$.
+
+Thus, $(a+c,[b]_2+[d]_2)=(a+c,[b+d]_2)$,
+
+and $f((a,b)+(c,d))=f((a,b))+f((c,d))$.
+
+$f$ is homomorphic under addition.
+\end{center}
+
+For multiplication,
+
+\begin{center}
+\begin{tabular}{c|c}
+$\begin{gathered}
+f((a,b))\cdot f((c,d))\\
+(a-b,[b]_2)\cdot (c-d,[d]_2)\\
+((a-b)(c-d),[b]_2\cdot [d]_2)\\
+\end{gathered}$
+&
+$\begin{gathered}
+f((a,b)\cdot (c,d))\\
+f((ac,bd))\\
+(ac-bd,[bd]_2)
+\end{gathered}$
+\end{tabular}
+
+To check whether $[b]_2[d]_2=[bd]_2$, see 4 cases:
+
+\begin{tabular}{c c c c}
+$b$ & $d$ & $[bd]_2$ & $[b]_2[d]_2$ \\
+even & even & 0 & 0\\
+even & odd & 0 & 0\\
+odd & even & 0 & 0\\
+odd & odd & 1 & 1
+\end{tabular}
+
+It is always that $[bd]_2=[b]_2[d]_2$.
+
+Thus, $f((a,b))\cdot f((c,d))=f((a,b)\cdot (c,d))$.
+
+\end{center}
+
+It is now established that $f$ is a surjective homomorphism.
+
 
 \end{soln}
 
@@ -300,6 +443,11 @@ b      & 0 & b & e & a
 \end{prob}
 
 \begin{soln}
+
+They are all isomorphic to $\ZZ_2\times\ZZ_2$ under addition,
+so that cannot be used as a basis for finding differences.
+
+%TODO
 
 \end{soln}
 
