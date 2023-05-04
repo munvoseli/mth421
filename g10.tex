@@ -521,7 +521,26 @@ prove that $f$ is the zero homorphism (that is, $f(x) = 0_R$ for every $x\in F$)
 [Hint: If  $f$ is not the zero homomorphism and $f(a) = f(b)$, then $f(a - b) = 0_R$.]
 \end{prob}
 
-\begin{soln}
+\begin{soln}\quad
+
+(a) Let $c$ be a nonzero element of $F$ (which exists since $F$ is a field).
+
+Since $F$ is a field, $c\in F$, and $c$ is nonzero, $c^{-1}$ exists.
+
+Let $x\in F$.  Since $f$ is a homomorphism, $f(xcc^{-1})=f(x)f(c)f(c^{-1})$.
+\begin{align*}
+f(x)&=f(xcc^{-1})
+&=f(x)f(c)f(c^{-1})\\
+&=f(x)0_Rf(c^{-1})\\
+&=0_R
+\end{align*}
+
+Since $x$ was an arbitrary element of $F$,
+this must be true for all elements of $F$.
+
+Thus, $f$ is the zero homomorphism.
+
+(b) %TODO
 
 \end{soln}
 
