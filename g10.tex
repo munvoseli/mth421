@@ -523,7 +523,9 @@ prove that $f$ is the zero homorphism (that is, $f(x) = 0_R$ for every $x\in F$)
 
 \begin{soln}\quad
 
-(a) Let $c$ be a nonzero element of $F$ (which exists since $F$ is a field).
+(a)
+
+Let $c$ be a nonzero element of $F$ (which exists since $F$ is a field).
 
 Since $F$ is a field, $c\in F$, and $c$ is nonzero, $c^{-1}$ exists.
 
@@ -540,7 +542,25 @@ this must be true for all elements of $F$.
 
 Thus, $f$ is the zero homomorphism.
 
-(b) %TODO
+(b)
+
+Two cases:
+
+Case $f$ is injective: $f$ is injective.
+
+Case $f$ is not injective:
+
+Let $a,b\in F$ such that $f(a)=f(b)$.
+
+Since $f$ is a homomorphism, $f(a-b)=0_R$.
+
+If $a-b=0_F$, then $a=b$.  This is a contradiction.
+
+If $a-b\neq 0_F$, then, by part (a), $f$ is the zero homomorphism.
+
+Thus, if $f$ is not injective, it is the zero homomorphism.
+
+$f$ is either injective or the zero homomorphism.
 
 \end{soln}
 
