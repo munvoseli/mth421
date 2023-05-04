@@ -432,7 +432,81 @@ preserved by this isomorphism? Justify your answers.
 (c) $R$ is an integral domain.
 \end{prob}
 
-\begin{soln}
+\begin{soln}\quad
+
+(a) Yes.
+
+By theorem 3.10.1, $f(0_R)=0_S$.
+
+Lemma: if $b\in R\neq 0_R$, then $f(b)\neq 0_S$.
+
+\leftskip 2cm
+
+Since $f$ is an isomorphism,
+$f$ is a bijection,
+$f$ is an injection,
+and every element of $S$ has at most one preimage.
+
+The preimage of $0_S$ is $0_R$ by theorem 3.10.1,
+so no element of $R$ but $0_R$ can map to $0_S$.
+
+\leftskip 0cm
+
+If $a\in R$ is a zero divisor, then
+
+\begin{center}
+$\exists b\in R\quad b\neq 0\text{ and } (ab=0_R) \text{ or } ba=0_R)$
+
+\begin{tabular}{c|c}
+case $ab=0_R$ & case $ba=0_R$\\
+$f(a)f(b)=0_S$ & $f(b)f(a)=0_S$
+\end{tabular}
+\end{center}
+
+In either case, $f(b)\neq 0_S$ by the lemma a few words ago,
+so $f(a)$ is a zero divisor.
+
+(b) Yes.
+
+\begin{align*}
+a^2&=a\\
+aa&=a\\
+f(a)f(a)&=f(a)
+\end{align*}
+
+(c) Yes.
+
+Integral domains
+
+\begin{itemize}
+\item are commutative
+\item have multiplicative identity (which is not equal to additive identity)
+\item $ab=0\Rightarrow (a=0\text{ or } b=0)$
+\end{itemize}
+
+For commutativity, let $f(a),f(b)$ be any elements of $S$
+(which is possible because $f$ is an isomorphism):
+\begin{align*}
+ab&=ba\\
+f(a)f(b)&=f(b)f(a)
+\end{align*}
+
+For multiplicative identity,
+$R$ has an element $1_R$ such that $\forall r\in R\quad r1_R=1_Rr=r$.
+If $f$ is applied, this implies that $S$ has an element $f(1_R)$
+such that $\forall f(r)\in S\quad f(r)f(1_R)=f(1_R)f(r)=f(r)$.
+
+Let $f(a),f(b)\in S$ such that $cd=0$.
+\begin{align*}
+f(a)f(b)&=0_S\\
+f(ab)&=0_S\\
+ab&=0_R\\
+a=0_R&\text{ or }b=0_R\\
+f(a)=0_S&\text{ or }f(b)=0_S
+\end{align*}
+If $R$ has this property, then $S$ has this property.
+
+If $R$ is an integral domain, then $S$ is an integral domain.
 
 \end{soln}
 
